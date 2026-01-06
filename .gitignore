@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+env/
+venv/
+.venv/
+
+# Scripts (contain database connection info)
+scripts/
+
+# Local data (detailed reports - keep locally only)
+data/g201_usage.csv
+data/g202_usage.csv
+data/g203_usage.csv
+data/t201_usage.csv
+
+# Keep these for reference but don't sync
+data/availability.csv
+data/last_update.txt
+
+# HTML reports (replaced by CSV)
+reports/
+*.html
+!web/**/*.html
+
+# Skill definition (local only)
+.skill/
+
+# Temp files
+*.tmp
+*.log
+*.bak
+compare_*.py
+check_*.py
+find_*.py
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini

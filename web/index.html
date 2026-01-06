@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>場地可借用時段查詢系統</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📅 場地可借用時段查詢系統</h1>
+            <p class="subtitle">臺北市立大學 - 場地借用管理</p>
+        </header>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="room-select">選擇場地：</label>
+                <select id="room-select">
+                    <option value="G201">G201 公誠樓第1會議廳 (103人)</option>
+                    <option value="G202">G202 公誠樓第2會議廳 (103人)</option>
+                    <option value="G203">G203 公誠樓第3會議廳 (225人)</option>
+                    <option value="T201">T201 會議室 (50人)</option>
+                </select>
+            </div>
+            <div class="update-info">
+                <span id="last-update">資料更新時間：載入中...</span>
+            </div>
+        </div>
+
+        <div class="legend">
+            <span class="legend-item available">🟢 可借用</span>
+            <span class="legend-item occupied">🔴 已借用</span>
+        </div>
+
+        <div class="stats" id="stats">
+            <span class="stat-item">可借用：<strong id="available-count">-</strong> 個時段</span>
+            <span class="stat-item">已借用：<strong id="occupied-count">-</strong> 個時段</span>
+        </div>
+
+        <div class="table-container">
+            <table id="availability-table">
+                <thead>
+                    <tr>
+                        <th>日期</th>
+                        <th>星期</th>
+                        <th>早上<br><small>08:00-12:00</small></th>
+                        <th>下午<br><small>13:00-17:00</small></th>
+                        <th>晚上<br><small>18:00-22:00</small></th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <tr>
+                        <td colspan="5" class="loading">載入資料中...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            <p>資料來源：臺北市立大學校務資訊系統</p>
+            <p>注意：資料每日更新，實際借用情況以系統為準</p>
+        </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
